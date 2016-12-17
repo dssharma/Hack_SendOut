@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/hack.css" media="screen" title="no title">
+</head>
+<body>
+<main>
+    <section>
+        <div id='quickLinks' class='top-bar'>
+            <div class="topic-pins">
+                <% pins.forEach(function (pin) { %>
+                <div id=<%= pin.id %> class='pins-container'>
+                    <p class="pin">
+                        <%= pin.title %>
+                    </p>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </section>
+    <section class='app-canvas'>
+        <div id='articles' class='article-container'>
+            <% tags.forEach(function (tag) { %>
+            <article class="card">
+                <div class="logo">
+                    <img src=<%= tag.url %> alt="" class="size_70"/>
+                </div>
+                <div class="topic">
+                    <p class="tag_heading">
+                        <%= tag.title %>
+                    </p>
+                </div>
+            </article>
+            <% }) %>
+        </div>
+    </section>
+    <section id="reader-view" class="reader-view hide">
+        <img src="/images/cancel.png" alt="" id="close" class="close"/>
+        <div class="section-heading">
+            <div class="logo">
+                <img src="" alt="" class="size32"/>
+            </div>
+            <div class="topic">
+                <p class="tag_heading">
+                </p>
+            </div>
+        </div>
+        <div class="questions">
+        </div>
+    </section>
+</main>
+<script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src='/javascripts/app.js'></script>
+</body>
+</html>
