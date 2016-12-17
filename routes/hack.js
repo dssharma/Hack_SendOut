@@ -45,27 +45,32 @@ var tags = [
     {
         id: 'tag1',
         url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
-        title: 'Samsung'
+        title: 'Samsung',
+        count: 10
     },
     {
         id: 'tag2',
         url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
-        title: 'Twitter'
+        title: 'Twitter',
+        count: 5
     },
     {
         id: 'tag4',
         url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
-        title: 'Intel'
+        title: 'Intel',
+        count: 6
     },
     {
         id: 'tag5',
         url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
-        title: 'Facebook'
+        title: 'Facebook',
+        count: 7
     },
     {
         id: 'tag6',
         url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
-        title: 'Facebook'
+        title: 'Facebook',
+        count: 3
     }
 ];
 

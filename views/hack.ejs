@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/stylesheets/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="/stylesheets/hack.css" media="screen" title="no title">
 </head>
 <body>
+
 <main>
-    <section>
+    <div class="tab-container ">
+        <ul class="tabs">
+            <li class="tab col s6 tab-links">
+                Links
+            </li>
+            <li class="tab col s6 tab-pins">
+                Pins
+            </li>
+        </ul>
+    </div>
+    <section class="pins-section hidden">
         <div id='quickLinks' class='top-bar'>
             <div class="topic-pins">
                 <% pins.forEach(function (pin) { %>
@@ -21,7 +33,8 @@
             </div>
         </div>
     </section>
-    <section class='app-canvas'>
+    <section class='app-canvas links-section'>
+        <div id="chart" class="chartContainer"></div>
         <div id='articles' class='article-container'>
             <% tags.forEach(function (tag) { %>
             <article class="card">
@@ -55,7 +68,10 @@
 <script
         src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+</script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript" src='/javascripts/materialize.min.js'></script>
 <script type="text/javascript" src='/javascripts/app.js'></script>
 </body>
 </html>

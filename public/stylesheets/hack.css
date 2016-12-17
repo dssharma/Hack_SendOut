@@ -7,7 +7,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
   width: 400px;
 }
 
@@ -25,11 +25,16 @@ a:-webkit-any-link {
   cursor: auto;
 }
 
+a:hover {
+  color: blue;
+  text-decoration: underline;
+  color: #1473be;
+}
+
 .top-bar {
 }
 
 .topic-pins {
-  max-height: 300px;
   overflow: auto;
   cursor: pointer;
 }
@@ -201,6 +206,17 @@ a:-webkit-any-link {
   box-shadow: 0 1px 1px #aaa;
 }
 
+.qheader-container {
+  display: flex;
+  align-content: center;
+}
+
+.q-text {
+  font-size: 24px;
+  margin-right: 5px;
+  color: #1473be;
+}
+
 .q-header {
   font-size: 24px;
   margin-bottom: 5px;
@@ -215,12 +231,14 @@ a:-webkit-any-link {
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   color: #242729;
+  margin-left: 29px;
 }
 
 .answerTitle {
-  font-size: 18px;
+  font-size: 24px;
+  margin-right: 8px;
+  color: #1473be;
   font-weight: normal;
-  color: #3b4045;
 }
 
 .a-description {
@@ -230,8 +248,40 @@ a:-webkit-any-link {
 .a-container {
   display: none;
   margin-top: 5px;
+  padding-top: 5px;
+  border-top: solid 1px #ddddf6;
+}
+
+.displayFlex {
+  display: flex;
+  align-content: center;
 }
 
 .visible {
   display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.tabs {
+  width: 50%;
+  height: 40px;
+  font-size: 25px;
+  color: black;
+  background: white;
+  font-family: 'Roboto', sans-serif;
+  border-color: #f8ffeb;
+}
+
+.tab-container {
+  display: flex;
+  align-content: center;
+}
+
+.chartContainer {
+  width: 200px;
+  height: 200px;
+  margin: auto;
 }

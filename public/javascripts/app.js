@@ -1,6 +1,39 @@
 var App = (function() {
   'use strict';
 
+  var tags = [
+    {
+      id: 'tag1',
+      url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
+      title: 'Samsung',
+      count: 10
+    },
+    {
+      id: 'tag2',
+      url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
+      title: 'Twitter',
+      count: 5
+    },
+    {
+      id: 'tag4',
+      url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
+      title: 'Intel',
+      count: 6
+    },
+    {
+      id: 'tag5',
+      url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
+      title: 'Facebook',
+      count: 7
+    },
+    {
+      id: 'tag6',
+      url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
+      title: 'Facebook',
+      count: 3
+    }
+  ];
+
   var questions = [
     {
       id: 1,
@@ -49,6 +82,62 @@ var App = (function() {
       answer: 'For a start the click function can be done like this instead of having to use .find():'
     }
   ];
+
+  var getChartData = function (tags) {
+    var data = [];
+    tags.forEach(function (tag) {
+      var object = {
+        name: tag.title,
+        y: tag.count
+      };
+      data.push(object);
+    });
+    return data;
+  };
+
+  var getChartOptions = function (chartData) {
+    return {
+      chart: {
+        type: 'pie',
+        backgroundColor:'rgba(255, 255, 255, 0.1)',
+        plotBorderWidth: null,
+        plotShadow: false,
+        margin: [-30, -10, -30, -10],
+        spacingTop: 0,
+        spacingBottom: 0,
+        spacingLeft: 0,
+        spacingRight: 0
+      },
+      title: {
+        text: null
+      },
+      yAxis: {
+        title: {
+          text: 'Total percent of total drives'
+        }
+      },
+      plotOptions: {
+        pie: {
+          dataLabels: {
+            enabled: false
+          },
+          verticalAlign: 'top',
+          borderWidth: 0
+        }
+      },
+      series: [
+        {
+          name: 'Total',
+          data : chartData,
+          size: '70%',
+          innerSize: '40%'
+        }
+      ],
+      credits: {
+        enabled: false
+      }
+    }
+  };
 
   var objectEquals = function (x, y) {
     if ( x === y ) return true;
@@ -105,7 +194,32 @@ var App = (function() {
       const areEqual = objectEquals($el, $previewInstance);
       areEqual ? hidePreview() : showPreview( $el );
     });
+
+    $('.tab-links').on('click', function () {
+      makeSectionVisible($('.links-section'));
+      makeSectionHidden($('.pins-section'));
+    });
+
+    $('.tab-pins').on('click', function () {
+      makeSectionVisible($('.pins-section'));
+      makeSectionHidden($('.links-section'));
+    });
+
+    var options = getChartOptions(getChartData(tags));
+    options.chart.renderTo = 'chart';
+    var chart = new Highcharts.Chart(options);
   };
+
+  var makeSectionVisible = function ($container) {
+    $container.removeClass('hidden');
+    $container.addClass('visible');
+  };
+
+  var makeSectionHidden = function ($container) {
+    $container.removeClass('visible');
+    $container.addClass('hidden');
+  };
+
 
   var handleQuestionClick = function () {
     var $questionContainer = $(this);
@@ -115,7 +229,7 @@ var App = (function() {
 
   var hideQuestion = function () {
     var $answer = $previousQuestionInstance.find('.a-container');
-    $answer.toggleClass('visible');
+    $answer.toggleClass('displayFlex');
     $previousQuestionInstance = null;
   };
 
@@ -126,7 +240,7 @@ var App = (function() {
 
     $previousQuestionInstance = $questionContainer;
     var $answer = $questionContainer.find('.a-container');
-    $answer.toggleClass('visible');
+    $answer.toggleClass('displayFlex');
   };
 
   var loadReader = function ($el) {
@@ -146,12 +260,17 @@ var App = (function() {
   };
 
   var addQuestionHTML = function (question) {
+    var $question = $('<div class="q-text">Q.</div>');
     var $heading = $('<div class="q-header"></div>');
     var $headingLink = $('<a href=' + question.url +'>' + question.title +'</a>');
     $heading.append($headingLink);
+    var $questionContainer = $('<div class="qheader-container"></div>');
+    $questionContainer.append($question);
+    $questionContainer.append($heading);
+
     var $description = $('<div class="q-description">' + question.question + '</div>');
 
-    var $answer = $('<div class="answerTitle">Answer:</div>');
+    var $answer = $('<div class="answerTitle">A.</div>');
     var $answerDescription = $('<div class="a-description">' + question.answer + '</div>');
     var $answerContainer = $('<div class="a-container"></div>');
     $answerContainer.append($answer);
@@ -159,7 +278,7 @@ var App = (function() {
 
     var $container = $('<div class="question-container"></div>');
     $container.click(handleQuestionClick);
-    $container.prepend($heading);
+    $container.prepend($questionContainer);
     $container.append($description);
     $container.append($answerContainer);
 
