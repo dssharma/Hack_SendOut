@@ -102,11 +102,11 @@ var App = (function() {
         backgroundColor:'rgba(255, 255, 255, 0.1)',
         plotBorderWidth: null,
         plotShadow: false,
-        margin: [-30, -10, -30, -10],
+        margin: [-30, 100, -30, -10],
         spacingTop: 0,
         spacingBottom: 0,
         spacingLeft: 0,
-        spacingRight: 0
+        spacingRight: 10
       },
       title: {
         text: null
@@ -122,7 +122,20 @@ var App = (function() {
             enabled: false
           },
           verticalAlign: 'top',
-          borderWidth: 0
+          borderWidth: 0,
+          showInLegend: true
+        }
+      },
+      legend: {
+        enabled: true,
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle',
+        useHTML: true,
+        labelFormatter: function () {
+          return '<div style="font-family: Roboto, sans-serif;font-size: 14px;">' +
+              this.name + ' ' + this.y +
+              '</div>'
         }
       },
       series: [
