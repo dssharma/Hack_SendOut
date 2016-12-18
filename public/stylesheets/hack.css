@@ -134,8 +134,7 @@ a:hover {
 
 .topic {
   font-size: 35px;
-  position: absolute;
-  width: 100%;
+  margin-left: 10px;
 }
 
 .tag_heading {
@@ -152,7 +151,7 @@ a:hover {
   z-index: 2;
   left: 0;
   top: 0;
-  width: 400px;
+  width: 300px;
   height: 100%;
   transition: 0.7s all;
 }
@@ -175,6 +174,7 @@ a:hover {
   align-items: center;
   border-bottom: solid 1px white;
   color: white;
+  height: 55px;
   background: #1473be;
 }
 

@@ -2,6 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 var pins = [
+
+    {
+        id: 'pin0',
+        title: 'GeoIp_ByIpAddress in Microsoft Interflow GeoIP Service'+
+    'The new implementation has a new request URL: https://interflowinternal.azure-api.net/ata/api/geoip/byipaddress'+
+    'The request headers and response are exactly the same format as before – no changes needed'
+    },
     {
         id: 'pin1',
         title: 'License key: 1234567891054564564878798745465'
@@ -12,14 +19,14 @@ var pins = [
     },
     {
         id: 'pin3',
-        title: 'On Wednesday, Mr Gandhi was picked by opposition leaders from ' +
-        'as many as 15 parties to speak on their behalf.'
+        title: 'There has been an update in the project folder structure in the development branch for v2 dashboard in preparation for Spend.'+
+        'With this change, the folder structure is more streamlined and readable.'
     },
     {
         id: 'pin4',
-        title: 'On Wednesday, Mr Gandhi was picked by opposition leaders from ' +
-        'as many as 15 parties to speak on their behalf.' +
-        'as many as 15 parties to speak on their behalf.'
+        title: 'Steps to set SpedIq Rest Backend' +
+        '\n1. Clone the Repo from github' +
+        '\n2.Install Docker'
     },
     {
         id: 'pin5',
@@ -44,32 +51,56 @@ var pins = [
 var tags = [
     {
         id: 'tag1',
-        url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
-        title: 'Samsung',
+        url: '/images/android.svg',
+        title: 'Android',
         count: 10
     },
     {
         id: 'tag2',
-        url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
-        title: 'Twitter',
-        count: 5
+        url: '/images/python-original.svg',
+        title: 'Python',
+        count: 8
     },
     {
-        id: 'tag4',
-        url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
-        title: 'Intel',
-        count: 6
-    },
-    {
-        id: 'tag5',
-        url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
-        title: 'Facebook',
+        id: 'tag3',
+        url: '/images/javascript-original.svg',
+        title: 'JavaScript',
         count: 7
     },
     {
+        id: 'tag3',
+        url: '/images/linux-original.svg',
+        title: 'Linux',
+        count: 7
+    },
+    {
+        id: 'tag5',
+        url: '/images/cplusplus-original.svg',
+        title: 'C++',
+        count: 3
+    },
+    {
         id: 'tag6',
-        url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
-        title: 'Facebook',
+        url: '/images/docker-original.svg',
+        title: 'Docker',
+        count: 3
+    },
+    {
+        id: 'tag7',
+        url: '/images/angularjs-original.svg',
+        title: 'AngularJS',
+        count: 3
+    },
+    {
+        id: 'tag8',
+        url: '/images/github-original.svg',
+        title: 'Github',
+        count: 3
+    },
+    {
+        id: 'tag9',
+        url: '/images/html5-original.svg',
+        title: 'HTML5',
         count: 3
     }
 ];

@@ -7,19 +7,28 @@
     <link type="text/css" rel="stylesheet" href="/stylesheets/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="/stylesheets/hack.css" media="screen" title="no title">
 </head>
-<body>
+<body style="width: 300px">
 
 <main>
-    <div class="tab-container ">
-        <ul class="tabs">
-            <li class="tab col s6 tab-links">
-                Links
-            </li>
-            <li class="tab col s6 tab-pins">
-                Pins
-            </li>
+
+
+    <nav style="background-color: #FFFFFF">
+        <div class="nav-wrapper" style="width: 100%; background-color: #1473BE">
+
+                <a href="#">           <div style="width: 50%;
+    float:left; font-size: 24px;" class="center t-links ">Links
+
+                </div>
+                </a>
+
+            <a href="#">
+                <div style="width: 50% ;font-size: 24px;
+    float:left;" class="center t-pins">Pins
+                    </div>
+            </a>
         </ul>
-    </div>
+            </div>
+    </nav>
     <section class="pins-section hidden">
         <div id='quickLinks' class='top-bar'>
             <div class="topic-pins">
@@ -46,6 +55,7 @@
                         <%= tag.title %>
                     </p>
                 </div>
+                <img src="images/share.png" style="width: 30px;   position: absolute;    top: 0px;    right: 0px;padding:2px;"  />
             </article>
             <% }) %>
         </div>
@@ -61,7 +71,7 @@
                 </p>
             </div>
         </div>
-        <div class="questions">
+        <div class="questions ">
         </div>
     </section>
 </main>

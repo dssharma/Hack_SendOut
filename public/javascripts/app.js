@@ -4,32 +4,56 @@ var App = (function() {
   var tags = [
     {
       id: 'tag1',
-      url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
-      title: 'Samsung',
+      url: '/images/android.svg',
+      title: 'Android',
       count: 10
     },
     {
       id: 'tag2',
-      url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
-      title: 'Twitter',
-      count: 5
+      url: '/images/python-original.svg',
+      title: 'Python',
+      count: 8
     },
     {
-      id: 'tag4',
-      url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
-      title: 'Intel',
-      count: 6
-    },
-    {
-      id: 'tag5',
-      url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
-      title: 'Facebook',
+      id: 'tag3',
+      url: '/images/javascript-original.svg',
+      title: 'JavaScript',
       count: 7
     },
     {
+      id: 'tag3',
+      url: '/images/linux-original.svg',
+      title: 'Linux',
+      count: 7
+    },
+    {
+      id: 'tag5',
+      url: '/images/cplusplus-original.svg',
+      title: 'C++',
+      count: 3
+    },
+    {
       id: 'tag6',
-      url: 'https://strongloop.com/wp-content/uploads/2015/12/nodejs-logo.png',
-      title: 'Facebook',
+      url: '/images/docker-original.svg',
+      title: 'Docker',
+      count: 3
+    },
+    {
+      id: 'tag7',
+      url: '/images/angularjs-original.svg',
+      title: 'AngularJS',
+      count: 3
+    },
+    {
+      id: 'tag8',
+      url: '/images/github-original.svg',
+      title: 'Github',
+      count: 3
+    },
+    {
+      id: 'tag9',
+      url: '/images/html5-original.svg',
+      title: 'HTML5',
       count: 3
     }
   ];
@@ -102,11 +126,12 @@ var App = (function() {
         backgroundColor:'rgba(255, 255, 255, 0.1)',
         plotBorderWidth: null,
         plotShadow: false,
-        margin: [-30, 100, -30, -10],
+        margin: [-10,110, -10, -10],
         spacingTop: 0,
         spacingBottom: 0,
         spacingLeft: 0,
-        spacingRight: 10
+        spacingRight: 10,
+        width:300
       },
       title: {
         text: null
@@ -208,12 +233,12 @@ var App = (function() {
       areEqual ? hidePreview() : showPreview( $el );
     });
 
-    $('.tab-links').on('click', function () {
+    $('.t-links').on('click', function () {
       makeSectionVisible($('.links-section'));
-      makeSectionHidden($('.pins-section'));
+      makeSectionHidden($('.pins-section'));``
     });
 
-    $('.tab-pins').on('click', function () {
+    $('.t-pins').on('click', function () {
       makeSectionVisible($('.pins-section'));
       makeSectionHidden($('.links-section'));
     });
