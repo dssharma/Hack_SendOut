@@ -226,6 +226,10 @@ var App = (function() {
       $('.reader-view').toggleClass( "hide" );
       loadReader($(this));
     });
+    $('.all_links').on('click', function () {
+      $('.reader-view').toggleClass( "hide" );
+      loadReaderForAllLinks($(this));
+    });
 
     $pins.on('click', function() {
       var $el = $(this);
@@ -290,6 +294,12 @@ var App = (function() {
     addQuestions($('.questions'));
   };
 
+
+  var loadReaderForAllLinks = function ($el) {
+    $('.section-heading').find('p').text("All Links");
+    $('.questions').empty();
+    addQuestions($('.questions'));
+  };
   var addQuestions = function ($el) {
     questions.forEach(function (question) {
       var $questionHtml = addQuestionHTML(question);

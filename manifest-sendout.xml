@@ -9,8 +9,8 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Sendout"/>
   <Description DefaultValue="Curates links and pins right on outlook app" />
-  <IconUrl DefaultValue="https://c786fc81.ngrok.io/images/icon.png"/>
-  <HighResolutionIconUrl DefaultValue="https://c786fc81.ngrok.io/images/icon.png"/>
+  <IconUrl DefaultValue="https://31a587be.ngrok.io/images/icon.png"/>
+  <HighResolutionIconUrl DefaultValue="https://31a587be.ngrok.io/images/icon.png"/>
   <Hosts>
     <Host Name="Mailbox"/>
   </Hosts>
@@ -22,7 +22,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://c786fc81.ngrok.io/hack"/>
+        <SourceLocation DefaultValue="https://31a587be.ngrok.io/hack"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -83,13 +83,13 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="icon-16" DefaultValue="https://c786fc81.ngrok.io/images/icon-16.png"/>
-        <bt:Image id="icon-32" DefaultValue="https://c786fc81.ngrok.io/images/icon-32.png"/>
-        <bt:Image id="icon-80" DefaultValue="https://c786fc81.ngrok.io/images/icon-80.png"/>
+        <bt:Image id="icon-16" DefaultValue="https://31a587be.ngrok.io/images/icon-16.png"/>
+        <bt:Image id="icon-32" DefaultValue="https://31a587be.ngrok.io/images/icon-32.png"/>
+        <bt:Image id="icon-80" DefaultValue="https://31a587be.ngrok.io/images/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="funcFile" DefaultValue="https://c786fc81.ngrok.io/Functions.html"/>
-        <bt:Url id="taskPaneUrl1" DefaultValue="https://c786fc81.ngrok.io/hack"/>
+        <bt:Url id="funcFile" DefaultValue="https://31a587be.ngrok.io/Functions.html"/>
+        <bt:Url id="taskPaneUrl1" DefaultValue="https://31a587be.ngrok.io/hack"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="SendOut"/>

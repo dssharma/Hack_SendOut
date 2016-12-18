@@ -114,6 +114,17 @@ a:hover {
   color: white;
   margin: 2px;
   user-select:none;
+}.all_links {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+   height: 50px;
+  box-shadow:0 1px 1px #aaa;
+  background: #1473be;
+  color: white;
+  margin: 2px;
+  user-select:none;
 }
 
 .logo {

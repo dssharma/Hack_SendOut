@@ -44,6 +44,9 @@
     </section>
     <section class='app-canvas links-section'>
         <div id="chart" class="chartContainer"></div>
+        <div class="all_links">
+           <p class="tag_heading" style="width: 100%; font-size: 24px;">All Links</p>
+                </div>
         <div id='articles' class='article-container'>
             <% tags.forEach(function (tag) { %>
             <article class="card">
@@ -55,7 +58,7 @@
                         <%= tag.title %>
                     </p>
                 </div>
-                <img src="images/share.png" style="width: 30px;   position: absolute;    top: 0px;    right: 0px;padding:2px;"  />
+                <img src="images/share.png" style="width: 30px;   position: absolute;    top: 5px;    right: 5px;padding:2px;"  />
             </article>
             <% }) %>
         </div>
