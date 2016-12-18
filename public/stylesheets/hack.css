@@ -233,6 +233,9 @@ a:hover {
   margin-bottom: 5px;
   color: #242729;
   font-weight: normal;
+  width: 237px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .q-description {
@@ -254,6 +257,9 @@ a:hover {
 
 .a-description {
   color: #242729;
+  width: 237px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .a-container {

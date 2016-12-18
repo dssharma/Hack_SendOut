@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var http = require('http');
 
 var pins = [
 
@@ -52,55 +53,55 @@ var tags = [
     {
         id: 'tag1',
         url: '/images/android.svg',
-        title: 'Android',
+        tag: 'Android',
         count: 10
     },
     {
         id: 'tag2',
         url: '/images/python-original.svg',
-        title: 'Python',
+        tag: 'Python',
         count: 8
     },
     {
         id: 'tag3',
         url: '/images/javascript-original.svg',
-        title: 'JavaScript',
+        tag: 'JavaScript',
         count: 7
     },
     {
         id: 'tag3',
         url: '/images/linux-original.svg',
-        title: 'Linux',
+        tag: 'Linux',
         count: 7
     },
     {
         id: 'tag5',
         url: '/images/cplusplus-original.svg',
-        title: 'C++',
+        tag: 'C++',
         count: 3
     },
     {
         id: 'tag6',
         url: '/images/docker-original.svg',
-        title: 'Docker',
+        tag: 'Docker',
         count: 3
     },
     {
         id: 'tag7',
         url: '/images/angularjs-original.svg',
-        title: 'AngularJS',
+        tag: 'AngularJS',
         count: 3
     },
     {
         id: 'tag8',
         url: '/images/github-original.svg',
-        title: 'Github',
+        tag: 'Github',
         count: 3
     },
     {
         id: 'tag9',
         url: '/images/html5-original.svg',
-        title: 'HTML5',
+        tag: 'HTML5',
         count: 3
     }
 ];

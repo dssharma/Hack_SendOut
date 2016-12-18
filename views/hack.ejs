@@ -49,13 +49,13 @@
                 </div>
         <div id='articles' class='article-container'>
             <% tags.forEach(function (tag) { %>
-            <article class="card">
+            <article class="card" data-id=<%= tag.tag%> >
                 <div class="logo">
                     <img src=<%= tag.url %> alt="" class="size_70"/>
                 </div>
                 <div class="topic">
                     <p class="tag_heading">
-                        <%= tag.title %>
+                        <%= tag.tag %>
                     </p>
                 </div>
                 <img src="images/share.png" style="width: 30px;   position: absolute;    top: 5px;    right: 5px;padding:2px;"  />

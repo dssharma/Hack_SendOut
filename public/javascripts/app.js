@@ -226,6 +226,7 @@ var App = (function() {
       $('.reader-view').toggleClass( "hide" );
       loadReader($(this));
     });
+
     $('.all_links').on('click', function () {
       $('.reader-view').toggleClass( "hide" );
       loadReaderForAllLinks($(this));
@@ -291,17 +292,27 @@ var App = (function() {
     $('.section-heading').find('img').attr('src', url);
     $('.section-heading').find('p').text(heading);
     $('.questions').empty();
-    addQuestions($('.questions'));
+    var id = $el.attr('data-id');
+    $.ajax({
+      url: 'http://localhost:3000/links?tags=' + id.toLowerCase(),
+      success: function(data) {
+        if(data.length === 0) {
+          addQuestions($('.questions'), questions);
+        }
+        else {
+          addQuestions($('.questions'), data);
+        }
+      }
+    });
   };
-
 
   var loadReaderForAllLinks = function ($el) {
     $('.section-heading').find('p').text("All Links");
     $('.questions').empty();
     addQuestions($('.questions'));
   };
-  var addQuestions = function ($el) {
-    questions.forEach(function (question) {
+  var addQuestions = function ($el, data) {
+    data.forEach(function (question) {
       var $questionHtml = addQuestionHTML(question);
       $el.append($questionHtml);
     });

@@ -18,7 +18,7 @@ var cheerio = require('cheerio');
 /* mongoose setup */
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/sendOutTest')
+mongoose.connect('mongodb://localhost/sendOutDummy')
     .then(() =>  console.log('connection succesful, run on sendout now'))
     .catch((err) => console.error(err));
 
