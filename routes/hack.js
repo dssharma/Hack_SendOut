@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var http = require('http');
+var request = require('request');
 
 var pins = [
 
@@ -106,11 +106,17 @@ var tags = [
     }
 ];
 
+var GET_TAGS_URL = 'http://localhost:3000/tags/';
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('hack', {
-        pins: pins,
-        tags: tags
+    request(GET_TAGS_URL, function (error, response, json) {
+        tags = JSON.parse(json);
+        console.log(tags);
+        res.render('hack', {
+            pins: pins,
+            tags: tags
+        });
     });
 });
 

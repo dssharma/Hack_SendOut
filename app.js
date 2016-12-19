@@ -18,13 +18,16 @@ var cheerio = require('cheerio');
 /* mongoose setup */
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/sendOutDummy')
+mongoose.connect('mongodb://localhost/sendOutTest3')
     .then(() =>  console.log('connection succesful, run on sendout now'))
     .catch((err) => console.error(err));
 
 // Create schemas
 var LinksObject = new mongoose.Schema({title: String,  question: String,  tags: [],  answer: String,  url: String,  createdDateTime: { "type": Date, "default": Date.now }});
-var Tags = new mongoose.Schema({ tag: String,  count: Number});
+var Tags = new mongoose.Schema({
+  tag: String,
+  url: String,
+  count: Number});
 
 var SendOutTable = mongoose.model('sendouts', LinksObject);
 var TagsTable = mongoose.model('tags', Tags);
@@ -129,9 +132,21 @@ app.get('/saveLink', function (req, res) {
               });
             } else {
               console.log("result does not have anything");
-              TagsTable.create({tag: tagName, count: '1'}, function(err, result2){
-                if(err) console.log(err);
-                else console.log("Tag Item Added with Count 1", result2);
+              var newTagName = tagName.split('.').join('');
+              var newTagName2 = newTagName.split(' ').join('');
+              var iconBaseUrl = "/icons/";
+              var newTagName3 = newTagName2.toLowerCase();
+              var newTagName4 = newTagName3+"/"+newTagName3+"-original.svg";
+              var iconUrl = iconBaseUrl + newTagName4;
+              console.log("Result ICON URL:" + iconUrl);
+              request(iconUrl, function (error, response, html) {
+                if(error || response.status === 404 ){
+                  iconUrl = '/icons/redis/redis-original.svg'
+                }
+                TagsTable.create({tag: tagName, url:iconUrl, count: '1'}, function(err, result2){
+                  if(err) console.log(err);
+                  else console.log("Tag Item Added with Count 1", result2);
+                });
               });
             }
           }
