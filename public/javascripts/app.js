@@ -239,7 +239,7 @@ var App = (function() {
 
     $('.t-links').on('click', function () {
       makeSectionVisible($('.links-section'));
-      makeSectionHidden($('.pins-section'));``
+      makeSectionHidden($('.pins-section'));
     });
 
     $('.t-pins').on('click', function () {
